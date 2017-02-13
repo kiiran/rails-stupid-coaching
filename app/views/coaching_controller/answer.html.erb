@@ -1,0 +1,13 @@
+<p>You: <%= @question %></p>
+<p>Coach:
+  <% default_response = "get dressed and go to work!" %>
+  <% if @question.downcase == "i am going to work right now!" %>
+  <%=   "" %>
+  <% elsif @question.include? "?" %>
+  <%=   "Silly question, #{default_response}" %>
+  <% else %>
+  <%=   "I don't care, #{default_response}" %>
+  <% end %>
+</p>
+
+<%= link_to "Go back", ask_path %>
